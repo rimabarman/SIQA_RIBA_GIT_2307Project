@@ -8,97 +8,140 @@ packages:
   gitUsername: rimabarman
   gitBranch: main
 - name: WmJDBCAdapter
+  version: 10.3.0.0.34
   wpmServer: https://packages.webmethods.io
   wpmRegistry: licensed
 - name: WmSalesforceRESTProvider
+  version: 12.0.0.0.21
   wpmServer: https://packages.webmethods.io
   wpmRegistry: supported
+- name: DADA_ExtendedProperty
+  gitServerName: rimaSCName
+  gitUrl: https://github.com/ParmelaDohling579
+  gitUsername: rimabarman
+  gitBranch: main
 services:
 - serviceName: project.siqa_riba_git_2307.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections:Database_1_Rima
   packages:
   - name: SIQA_RIBA_GIT_2307Project
     version: "1.0"
+  - name: DADA_ExtendedProperty
+    version: "1.0"
   - name: WmJDBCAdapter
     version: 10.3.0.0.34
     wpmServer: https://packages.webmethods.io
     wpmRegistry: licensed
+  - name: WmSalesforceRESTProvider
+    version: 12.0.0.0.21
+- serviceName: project.siqa_riba_git_2307.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.operations.actions:TestDB
+  packages:
+  - name: SIQA_RIBA_GIT_2307Project
+    version: "1.0"
+  - name: DADA_ExtendedProperty
+    version: "1.0"
+  - name: WmJDBCAdapter
+    version: 10.3.0.0.34
+    wpmServer: https://packages.webmethods.io
+    wpmRegistry: licensed
+  - name: WmSalesforceRESTProvider
+    version: 12.0.0.0.21
 - serviceName: project.siqa_riba_git_2307.integrations:SIQAAdapterFlow
   packages:
   - name: SIQA_RIBA_GIT_2307Project
     version: "1.0"
-  - name: WmJDBCAdapter
-    version: 10.3.0.0.34
-    wpmServer: https://packages.webmethods.io
-    wpmRegistry: licensed
-- serviceName: project.kvv_2404_fedtest_5a626de41e9147bcbeffc99933067bec_export.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.operations.actions:TestDBConn
-  packages:
-  - name: SIQA_RIBA_GIT_2307Project
+  - name: DADA_ExtendedProperty
     version: "1.0"
   - name: WmJDBCAdapter
     version: 10.3.0.0.34
     wpmServer: https://packages.webmethods.io
     wpmRegistry: licensed
+  - name: WmSalesforceRESTProvider
+    version: 12.0.0.0.21
+- serviceName: project.siqa_riba_git_2307.integrations:Test_RestConnector
+  packages:
+  - name: SIQA_RIBA_GIT_2307Project
+    version: "1.0"
+  - name: DADA_ExtendedProperty
+    version: "1.0"
+  - name: WmJDBCAdapter
+    version: 10.3.0.0.34
+    wpmServer: https://packages.webmethods.io
+    wpmRegistry: licensed
+  - name: WmSalesforceRESTProvider
+    version: 12.0.0.0.21
+- serviceName: project.siqa_riba_git_2307.integrations:Test_SoapConnector
+  packages:
+  - name: SIQA_RIBA_GIT_2307Project
+    version: "1.0"
+  - name: DADA_ExtendedProperty
+    version: "1.0"
+  - name: WmJDBCAdapter
+    version: 10.3.0.0.34
+    wpmServer: https://packages.webmethods.io
+    wpmRegistry: licensed
+  - name: WmSalesforceRESTProvider
+    version: 12.0.0.0.21
 configurationVariables:
-  ? artConnection.SIQA_RIBA_GIT_2307Project.project.siqa_riba_git_2307.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1_Rima.connectionSettings.password
-  : "{AES}D6/2AGfsSWDOcWCLrORnEQ=="
   jdbc.SAP TxStore Pool.maxConns: "10"
-  ? artConnection.SIQA_RIBA_GIT_2307Project.project.siqa_riba_git_2307.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1_Rima.connectionManagerSettings.heartBeatInterval
-  : "0"
-  ? artConnection.SIQA_RIBA_GIT_2307Project.project.siqa_riba_git_2307.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1_Rima.connectionSettings.transactionType
-  : NO_TRANSACTION
   ? artConnection.SIQA_RIBA_GIT_2307Project.project.siqa_riba_git_2307.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1_Rima.connectionManagerSettings.minimumPoolSize
   : "1"
-  ? artConnection.SIQA_RIBA_GIT_2307Project.project.siqa_riba_git_2307.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1_Rima.connectionSettings.keyStore
-  : ""
   jdbcfunc.SAPTxStore.failFastMode: false
   jdbc.SAP TxStore Pool.poolThreshold: "0"
   ? artConnection.SIQA_RIBA_GIT_2307Project.project.siqa_riba_git_2307.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1_Rima.connectionSettings.databaseName
   : MYSQL_DATABASE
-  ? artConnection.SIQA_RIBA_GIT_2307Project.project.siqa_riba_git_2307.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1_Rima.connectionSettings.dbType
-  : MySQL
-  jdbc.SAP TxStore Pool.dbURL: jdbc:mysql://localhost:3306/SAPTRANSACTIONSTORE?useSSL=false&characterEncoding=utf-8&autoReconnect=true&maxReconnects=5&sessionVariables=wait_timeout=2147483
   jdbc.SAP TxStore Pool.spyenabled: "false"
   jdbc.SAP TxStore Pool.useSSL: "false"
-  jdbc.SAP TxStore Pool.waitingThread: "10"
   ? artConnection.SIQA_RIBA_GIT_2307Project.project.siqa_riba_git_2307.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1_Rima.connectionManagerSettings.startupRetryCount
   : "0"
-  jdbc.SAP TxStore Pool.description: Connection Pool for the SAP Transaction Store
   jdbc.SAP TxStore Pool.password: "{AES}nrGf3u7Wt20hFBGh5ZeEuQ=="
   ? artConnection.SIQA_RIBA_GIT_2307Project.project.siqa_riba_git_2307.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1_Rima.connectionSettings.trustStore
   : ""
-  ? artConnection.SIQA_RIBA_GIT_2307Project.project.siqa_riba_git_2307.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1_Rima.connectionSettings.networkProtocol
-  : tcp
   ? artConnection.SIQA_RIBA_GIT_2307Project.project.siqa_riba_git_2307.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1_Rima.connectionSettings.driverType
   : TestDrv
-  ? artConnection.SIQA_RIBA_GIT_2307Project.project.siqa_riba_git_2307.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1_Rima.connectionSettings.user
-  : siqatest
+  ? artConnection.SIQA_RIBA_GIT_2307Project.project.siqa_riba_git_2307.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1_Rima.connectionSettings.networkProtocol
+  : tcp
   jdbc.SAP TxStore Pool.spyparms: SpyAttributes=(log=(file)logs/spy/SAP_TxStore_Pool.log;logTName=yes;timestamp=yes)
-  ? artConnection.SIQA_RIBA_GIT_2307Project.project.siqa_riba_git_2307.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1_Rima.connectionManagerSettings.maximumPoolSize
-  : "10"
   ? artConnection.SIQA_RIBA_GIT_2307Project.project.siqa_riba_git_2307.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1_Rima.connectionManagerSettings.startupBackoffSecs
   : "10"
   jdbc.SAP TxStore Pool.snoopenabled: "false"
-  jdbc.SAP TxStore Pool.snoopparms: ddtdbg.ProtocolTraceEnable=true;ddtdbg.ProtocolTraceMaxline=16;ddtdbg.ProtocolTraceLocation=logs/snoop/SAP_TxStore_Pool.log;ddtdbg.ProtocolTraceShowTime=true
   jdbc.SAP TxStore Pool.expireTime: "60000"
-  ? artConnection.SIQA_RIBA_GIT_2307Project.project.siqa_riba_git_2307.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1_Rima.connectionManagerSettings.blockingTimeout
-  : "1000"
   ? artConnection.SIQA_RIBA_GIT_2307Project.project.siqa_riba_git_2307.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1_Rima.connectionSettings.portNumber
   : "3306"
-  ? artConnection.SIQA_RIBA_GIT_2307Project.project.siqa_riba_git_2307.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1_Rima.connectionManagerSettings.poolIncrementSize
-  : "1"
   jdbc.SAP TxStore Pool.minConns: "5"
-  ? artConnection.SIQA_RIBA_GIT_2307Project.project.siqa_riba_git_2307.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1_Rima.connectionSettings.serverName
-  : 9.46.196.248
   ? artConnection.SIQA_RIBA_GIT_2307Project.project.siqa_riba_git_2307.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1_Rima.connectionSettings.datasourceClass
   : com.mysql.cj.jdbc.MysqlDataSource
-  jdbc.SAP TxStore Pool.userid: root
   ? artConnection.SIQA_RIBA_GIT_2307Project.project.siqa_riba_git_2307.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1_Rima.connectionManagerSettings.poolable
   : "false"
+  jdbc.SAP TxStore Pool.driverAlias: MySQL CC Driver
+  jdbcfunc.SAPTxStore.connPoolAlias: SAP TxStore Pool
+  ? artConnection.SIQA_RIBA_GIT_2307Project.project.siqa_riba_git_2307.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1_Rima.connectionSettings.password
+  : "{AES}D6/2AGfsSWDOcWCLrORnEQ=="
+  ? artConnection.SIQA_RIBA_GIT_2307Project.project.siqa_riba_git_2307.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1_Rima.connectionManagerSettings.heartBeatInterval
+  : "0"
+  ? artConnection.SIQA_RIBA_GIT_2307Project.project.siqa_riba_git_2307.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1_Rima.connectionSettings.transactionType
+  : NO_TRANSACTION
+  ? artConnection.SIQA_RIBA_GIT_2307Project.project.siqa_riba_git_2307.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1_Rima.connectionSettings.keyStore
+  : ""
+  ? artConnection.SIQA_RIBA_GIT_2307Project.project.siqa_riba_git_2307.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1_Rima.connectionSettings.dbType
+  : MySQL
+  jdbc.SAP TxStore Pool.dbURL: jdbc:mysql://localhost:3306/SAPTRANSACTIONSTORE?useSSL=false&characterEncoding=utf-8&autoReconnect=true&maxReconnects=5&sessionVariables=wait_timeout=2147483
+  jdbc.SAP TxStore Pool.waitingThread: "10"
+  jdbc.SAP TxStore Pool.description: Connection Pool for the SAP Transaction Store
+  ? artConnection.SIQA_RIBA_GIT_2307Project.project.siqa_riba_git_2307.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1_Rima.connectionSettings.user
+  : siqatest
+  ? artConnection.SIQA_RIBA_GIT_2307Project.project.siqa_riba_git_2307.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1_Rima.connectionManagerSettings.maximumPoolSize
+  : "10"
+  jdbc.SAP TxStore Pool.snoopparms: ddtdbg.ProtocolTraceEnable=true;ddtdbg.ProtocolTraceMaxline=16;ddtdbg.ProtocolTraceLocation=logs/snoop/SAP_TxStore_Pool.log;ddtdbg.ProtocolTraceShowTime=true
+  ? artConnection.SIQA_RIBA_GIT_2307Project.project.siqa_riba_git_2307.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1_Rima.connectionManagerSettings.blockingTimeout
+  : "1000"
+  ? artConnection.SIQA_RIBA_GIT_2307Project.project.siqa_riba_git_2307.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1_Rima.connectionManagerSettings.poolIncrementSize
+  : "1"
+  ? artConnection.SIQA_RIBA_GIT_2307Project.project.siqa_riba_git_2307.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1_Rima.connectionSettings.serverName
+  : 9.46.196.248
+  jdbc.SAP TxStore Pool.userid: root
   ? artConnection.SIQA_RIBA_GIT_2307Project.project.siqa_riba_git_2307.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1_Rima.connectionSettings.otherProperties
   : loginTimeout=60;driverType=thin;
-  jdbc.SAP TxStore Pool.driverAlias: MySQL CC Driver
   ? artConnection.SIQA_RIBA_GIT_2307Project.project.siqa_riba_git_2307.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1_Rima.connectionEnabled
   : "false"
   ? artConnection.SIQA_RIBA_GIT_2307Project.project.siqa_riba_git_2307.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1_Rima.connectionManagerSettings.expireTimeout
   : "1000"
-  jdbcfunc.SAPTxStore.connPoolAlias: SAP TxStore Pool
